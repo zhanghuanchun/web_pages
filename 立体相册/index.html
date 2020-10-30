@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            /* background: pink; */
+            top: 50%;
+            left: 50%;
+            margin: -100px;
+            transform-style: preserve-3d;
+            animation: conrotate 20s linear infinite;
+            /* transform: rotateX(-45deg) rotateZ(-45deg);  */
+        }
+
+        .outer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            opacity: .8;
+            transition: transform .5s;
+        }
+
+        .outer:nth-child(1) {
+            transform: translateZ(100px);
+        }
+
+        .outer:nth-child(2) {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .outer:nth-child(3) {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .outer:nth-child(4) {
+            transform: rotateY(270deg) translateZ(100px);
+        }
+
+        .outer:nth-child(5) {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .outer:nth-child(6) {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .inner {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            opacity: 1;
+            width: 100px;
+            height: 100px;
+        }
+
+
+        .inner:nth-child(7) {
+            transform: translateZ(50px);
+        }
+
+        .inner:nth-child(8) {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .inner:nth-child(9) {
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .inner:nth-child(10) {
+            transform: rotateY(270deg) translateZ(50px);
+        }
+
+        .inner:nth-child(11) {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .inner:nth-child(12) {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+
+
+        .container:hover .outer:nth-child(1) {
+            transform: translateZ(200px);
+        }
+
+        .container:hover .outer:nth-child(2) {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        .container:hover .outer:nth-child(3) {
+            transform: rotateY(180deg) translateZ(200px);
+        }
+
+        .container:hover .outer:nth-child(4) {
+            transform: rotateY(270deg) translateZ(200px);
+        }
+
+        .container:hover .outer:nth-child(5) {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        .container:hover .outer:nth-child(6) {
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+
+        @keyframes conrotate {
+            0%{
+                transform: rotateX(0) rotateY(0);
+            }
+            100% {
+                transform: rotateX(-360deg) rotateY(-360deg);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <img src="img/1.jpg" class="outer">
+        <img src="img/2.jpg" class="outer">
+        <img src="img/3.jpg" class="outer">
+        <img src="img/4.jpg" class="outer">
+        <img src="img/5.jpg" class="outer">
+        <img src="img/6.jpg" class="outer">
+
+        <img src="img/7.jpg" class="inner">
+        <img src="img/8.jpg" class="inner">
+        <img src="img/9.jpg" class="inner">
+        <img src="img/10.jpg" class="inner">
+        <img src="img/11.jpg" class="inner">
+        <img src="img/12.jpg" class="inner">
+    </div>
+    <!-- <script>
+        var con = document.querySelector('.container');
+        var step = 0;
+        setInterval(() => {
+            step += 1;
+            con.style.transform = 'rotateX(' + (step) + 'deg) rotateY(' + (step) + 'deg)';
+        }, 20);
+    </script> -->
+</body>
+
+</html>
