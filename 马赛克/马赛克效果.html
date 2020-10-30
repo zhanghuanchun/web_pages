@@ -26,20 +26,6 @@
         img.onload = function () {
             ctx.drawImage(img, 0, 0, 600, 600 * img.height / img.width);
             var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-            // 理清再写代码比较好
-            // for (var i = 0; i < 450; i += 10) {//选出每一行
-            //     for (var j = 0; j < 2400; j += 4 * 10) {
-            //         for (var a = 0; a < 10; a++) {
-            //             for (var b = 0; b < 10; b++) {
-            //                 imageData.data[2400 * i + j + a * 2400 + b * 4] = imageData.data[2400 * i + j];
-            //                 imageData.data[2400 * i + j + a * 2400 + b * 4 + 1] = imageData.data[2400 * i + j + 1];
-            //                 imageData.data[2400 * i + j + a * 2400 + b * 4 + 2] = imageData.data[2400 * i + j + 2];
-            //                 imageData.data[2400 * i + j + a * 2400 + b * 4 + 3] = imageData.data[2400 * i + j + 3];
-            //             }
-            //         }
-            //     }
-            // }
             var timer1 = +new Date();
             function custoMosaic(x, y, size) {
                 for (var i = 0; i < y; i += size) {//选出每一行
