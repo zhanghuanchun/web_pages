@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lsp刮刮卡</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 100px auto;
+            background: url(img/yongzhuang2p.jpg);
+            background-size: 500px;
+            border-radius: 7px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, .2);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="350.348"></canvas>
+    <script>
+        var cvs = document.querySelector("canvas");
+        var ctx = cvs.getContext("2d");
+        ctx.beginPath();
+        ctx.fillStyle = "#ddd";
+        ctx.fillRect(0, 0, 500, 350.348);
+
+        ctx.globalCompositeOperation = 'destination-out';
+        var isMouseDown = false;
+
+
+        cvs.onmousedown = function (e) {
+            isMouseDown = true;
+            ctx.beginPath();
+            ctx.lineWidth = 15;
+            ctx.lineCap = 'round';
+            ctx.fillStyle = "#ddd";
+            ctx.moveTo(e.offsetX, e.offsetY);
+        }
+        cvs.onmousemove = function (e) {
+            if (isMouseDown) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+            }
+        }
+        document.onmouseup = function () {
+            isMouseDown = false;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
