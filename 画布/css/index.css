@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    border-radius: 7px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px  rgba(0, 0, 0, .2);
+}
+
+.brushcolor {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+
+.coloritem {
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+.brushsize {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+
+.sizeitem {
+    width: 60px;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.sizeitem span{
+    display: block;
+    background: #aaa;
+}
